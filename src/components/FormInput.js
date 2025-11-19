@@ -38,7 +38,7 @@ const FormInput = ({
           value={value}
           onChange={onChange}
           onBlur={onBlur}
-          className={`form-input ${getInputClass()}`}
+          className={`form-input ${getInputClass()} ${error ? 'error' : ''}`}
           placeholder={placeholder}
         />
         {isValid && (
