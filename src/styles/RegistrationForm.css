@@ -1,0 +1,142 @@
+.registration-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.registration-wrapper {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.registration-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.registration-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.registration-subtitle {
+  color: #6b7280;
+}
+
+.registration-form-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.submit-button-active {
+  background-color: #2563eb;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.submit-button-active:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.submit-button-disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.submit-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.spinner-circle {
+  opacity: 0.25;
+}
+
+.spinner-path {
+  opacity: 0.75;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.registration-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.sign-in-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.sign-in-link:hover {
+  color: #1d4ed8;
+}
+
+.security-notice {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .registration-card {
+    padding: 1.5rem;
+  }
+
+  .registration-title {
+    font-size: 1.5rem;
+  }
+}
