@@ -634,7 +634,6 @@ const RegistrationForm = () => {
                       onChange={handleChange}
                       onBlur={() => handleBlur('termsAccepted')}
                     />
-                    <span className="terms-checkbox-custom"></span>
                     <span className="terms-checkbox-label">
                       I agree to the <a href="#" className="terms-link">Terms & Conditions</a> <span className="required-asterisk">*</span>
                     </span>
