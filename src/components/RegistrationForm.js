@@ -174,13 +174,13 @@ const RegistrationForm = () => {
   useEffect(() => {
     if (formData.country) {
       let countryStates = [];
-      
+
       if (formData.country === 'in') {
         countryStates = indiaData.states;
       } else {
         countryStates = countriesData[formData.country]?.states || [];
       }
-      
+
       setStates([{ value: '', label: 'Select State' }, ...countryStates]);
       setFormData(prev => ({ ...prev, state: '', city: '' }));
       setCities([{ value: '', label: 'Select City' }]);
@@ -194,13 +194,13 @@ const RegistrationForm = () => {
   useEffect(() => {
     if (formData.state) {
       let stateCities = [];
-      
+
       if (formData.country === 'in') {
         stateCities = indiaData.cities[formData.state] || [];
       } else {
         stateCities = countriesData[formData.country]?.cities[formData.state] || [];
       }
-      
+
       setCities([{ value: '', label: 'Select City' }, ...stateCities]);
       setFormData(prev => ({ ...prev, city: '' }));
     } else {
@@ -338,22 +338,22 @@ const RegistrationForm = () => {
   };
 
   const isFormValid = () => {
-    return validFields.name && 
-           validFields.email && 
-           validFields.age &&
-           validFields.gender &&
-           validFields.address &&
-           validFields.country &&
-           validFields.state &&
-           validFields.city &&
-           validFields.password && 
-           validFields.confirmPassword &&
-           validFields.termsAccepted;
+    return validFields.name &&
+      validFields.email &&
+      validFields.age &&
+      validFields.gender &&
+      validFields.address &&
+      validFields.country &&
+      validFields.state &&
+      validFields.city &&
+      validFields.password &&
+      validFields.confirmPassword &&
+      validFields.termsAccepted;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Mark all fields as touched to show errors
     const allTouched = Object.keys(touched).reduce((acc, key) => {
       acc[key] = true;
@@ -374,8 +374,8 @@ const RegistrationForm = () => {
     const confirmError = validateConfirmPassword(formData.confirmPassword, formData.password);
     const termsError = validateTerms(formData.termsAccepted);
 
-    if (nameError || emailError || ageError || genderError || addressError || 
-        countryError || stateError || cityError || passwordError || confirmError || termsError) {
+    if (nameError || emailError || ageError || genderError || addressError ||
+      countryError || stateError || cityError || passwordError || confirmError || termsError) {
       return;
     }
 
@@ -385,7 +385,7 @@ const RegistrationForm = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setShowSuccess(true);
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({
@@ -627,11 +627,12 @@ const RegistrationForm = () => {
                   <label className="terms-checkbox">
                     <input
                       type="checkbox"
+                      id="terms"
+                      data-testid="terms-checkbox"
                       name="termsAccepted"
                       checked={formData.termsAccepted}
                       onChange={handleChange}
                       onBlur={() => handleBlur('termsAccepted')}
-                      className="terms-checkbox-input"
                     />
                     <span className="terms-checkbox-custom"></span>
                     <span className="terms-checkbox-label">
@@ -645,6 +646,8 @@ const RegistrationForm = () => {
               </div>
 
               <button
+                id="submitBtn"
+                data-testid="submit-button"
                 type="submit"
                 disabled={!isFormValid() || isSubmitting}
                 className={`submit-button ${isFormValid() && !isSubmitting ? 'submit-button-active' : 'submit-button-disabled'}`}
