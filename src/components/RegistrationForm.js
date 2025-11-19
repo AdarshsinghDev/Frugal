@@ -648,7 +648,6 @@ const RegistrationForm = () => {
                 id="submitBtn"
                 data-testid="submit-button"
                 type="submit"
-                disabled={!isFormValid() || isSubmitting}
                 className={`submit-button ${isFormValid() && !isSubmitting ? 'submit-button-active' : 'submit-button-disabled'}`}
               >
                 {isSubmitting ? (
