@@ -450,7 +450,7 @@ const RegistrationForm = () => {
             <form onSubmit={handleSubmit} className="registration-form">
               <div className="form-fields">
                 <FormInput
-                  label="Full Name"
+                  label="FullName"
                   type="text"
                   name="name"
                   value={formData.name}
@@ -646,7 +646,7 @@ const RegistrationForm = () => {
 
               <button
                 id="submitBtn"
-                data-testid="submit-button"
+                data-testid=""
                 type="submit"
                 className={`submit-button ${isFormValid() && !isSubmitting ? 'submit-button-active' : 'submit-button-disabled'}`}
               >
